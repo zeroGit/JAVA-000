@@ -70,10 +70,17 @@ G1 jstat
 
 
 ##### 各GC情况对比
+![GC比较](https://raw.githubusercontent.com/zeroGit/JAVA-000/main/Week_02/%E5%91%A8%E5%9B%9B4_gc%E6%80%BB%E7%BB%93/GC%E6%AF%94%E8%BE%83.png)
 
+由比较可见，
+其中 并行GC 创建的对象最多YGC FGC 总体而言算是最好
 
+CMS FGC 时间很短
+CMS 创建的对象几乎和串行GC差不多，内存和CPU占用都比较大
 
+G1 没有FGC，但是YGC次数不少
 
+串行GC 效率最低
 
 
 
