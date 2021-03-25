@@ -1,7 +1,7 @@
 package io.github.kimmking.gateway.inbound;
 
 import io.github.kimmking.gateway.filter.HttpRequestFilter;
-import io.github.kimmking.gateway.filter.RedirectBaidu;
+import io.github.kimmking.gateway.filter.SensitiveWordsFilter;
 import io.github.kimmking.gateway.outbound.okhttp.OkhttpOutboundHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
@@ -13,13 +13,11 @@ import org.slf4j.LoggerFactory;
 public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
 
     private static Logger logger = LoggerFactory.getLogger(HttpInboundHandler.class);
-    private final String proxyServer;
     private OkhttpOutboundHandler handler;
     private HttpRequestFilter filter;
 
-    public HttpInboundHandler(String proxyServer) {
-        this.proxyServer = proxyServer;
-        filter = new RedirectBaidu();
+    public HttpInboundHandler() {
+        filter = new SensitiveWordsFilter();
         handler = new OkhttpOutboundHandler();
     }
 
@@ -38,15 +36,13 @@ public class HttpInboundHandler extends ChannelInboundHandlerAdapter {
 //            if (uri.contains("/test")) {
 //                handlerTest(fullRequest, ctx);
 //            }
-
-            filter.filter(fullRequest, ctx);
-            handler.handle(fullRequest, ctx);
-
+            super.channelRead(ctx, msg);
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            ReferenceCountUtil.release(msg);
         }
+        //finally {
+        //    ReferenceCountUtil.release(msg);
+        //}
     }
 
 //    private void handlerTest(FullHttpRequest fullRequest, ChannelHandlerContext ctx) {
