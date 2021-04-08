@@ -35,7 +35,7 @@ public class RpcfxServerApplication {
 
 		// start zk client
 		RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000, 3);
-		CuratorFramework client = CuratorFrameworkFactory.builder().connectString("120.132.38.85:22181").namespace("rpcfx").retryPolicy(retryPolicy).build();
+		CuratorFramework client = CuratorFrameworkFactory.builder().connectString("127.0.0.1:22181").namespace("rpcfx").retryPolicy(retryPolicy).build();
 		client.start();
 
 

@@ -65,7 +65,7 @@ public class RpcfxCliAspect {
         //}
 
         RpcfxResponse response = post(request, "http://localhost:8080/", retClass);
-        //RpcfxResponse response = post(request, "http://47.93.207.16:9098/", retClass);
+        //RpcfxResponse response = post(request, "http://127.0.0.1:9098/", retClass);
 
         // 加filter地方之三
         // Student.setTeacher("cuijing");

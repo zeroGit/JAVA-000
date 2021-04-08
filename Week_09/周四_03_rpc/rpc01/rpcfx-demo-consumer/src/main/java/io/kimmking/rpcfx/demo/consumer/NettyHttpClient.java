@@ -110,7 +110,7 @@ public class NettyHttpClient {
     public static void main(String[] args) {
         try {
             {
-                NettyHttpClient nettyHttpClient = NettyHttpClient.newCli("http://47.93.207.16:9098/abc?a=我", "abcdefg");
+                NettyHttpClient nettyHttpClient = NettyHttpClient.newCli("http://127.0.0.1:9098/abc?a=我", "abcdefg");
                 String res = nettyHttpClient.getResBody();
                 System.out.println("QQQQQQQQQQQQQQQQQ " + res);
             }

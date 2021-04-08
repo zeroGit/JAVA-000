@@ -5,9 +5,9 @@
 <configuration>
     <properties>
         <property name="driver" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://120.132.38.86:33066/mydb"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1:33066/mydb"/>
         <property name="username" value="root"/>
-        <property name="password" value="fU7hf32df81"/>
+        <property name="password" value="12345"/>
         <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/>
     </properties>
 
