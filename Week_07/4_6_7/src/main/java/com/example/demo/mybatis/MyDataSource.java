@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class MyDataSource implements DataSource {
     @Override
     public Connection getConnection() throws SQLException {
-        return DriverManager.getConnection("jdbc:mysql://120.132.38.86:33066/mydb", "root", "fU7hf32df81");
+        return DriverManager.getConnection("jdbc:mysql://127.0.0.1:33066/mydb", "root", "123456");
     }
 
     @Override
